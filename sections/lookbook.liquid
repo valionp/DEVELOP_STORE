@@ -1,0 +1,323 @@
+{{ 'component-image-with-text.css' | asset_url | stylesheet_tag }}
+{{ 'section-main-product.css' | asset_url | stylesheet_tag }}
+
+{% assign first-image = section.settings.first-image %}
+{% assign second-image = section.settings.second-image %}
+{% assign third-image = section.settings.third-image %}
+
+{% assign first-description = section.settings.first-description %}
+{% assign second-description = section.settings.second-description %}
+{% assign third-description = section.settings.third-description %}
+
+{% assign first-modal = section.settings.first-modal %}
+{% assign second-modal = section.settings.second-modal %}
+{% assign third-modal = section.settings.third-modal %}
+
+<script>
+  const firstProducts = [];
+  const secondProducts = [];
+  const thirdProducts = [];
+
+  {%- for block in section.blocks -%}
+    {%- case block.type -%}
+      {%- when 'firstProduct' -%}
+        {% if first-modal %}
+          {% assign firstProduct = all_products[block.settings.product] %}
+          firstProducts.push({{ firstProduct | json }});
+        {% endif %}
+
+      {%- when 'secondProduct' -%}
+        {% if second-modal %}
+          {% assign secondProduct = all_products[block.settings.product] %}
+          secondProducts.push({{ secondProduct | json }});
+        {% endif %}
+
+      {%- when 'thirdProduct' -%}
+        {% if third-modal %}
+          {% assign thirdProduct = all_products[block.settings.product] %}
+          thirdProducts.push({{ thirdProduct | json }});
+        {% endif %}
+    {% endcase %}
+  {% endfor %}
+</script>
+
+<div class="look-book_section page-width">
+  <h1 class="{{ section.settings.horizontal_alignment }}">{{ section.settings.heading }}</h1>
+  <div class="looks-wrapper">
+
+    {% if first-image %}
+      <div data-order="1"
+          class="image-with-text__media-item image-with-text__media-item--{{ section.settings.desktop_image_width }} grid__item {% if first-modal %}modal-trigger{% endif %}">
+        <div
+            class="image-with-text__media image-with-text__media--{{ section.settings.height }} global-media-settings media"
+            {% if section.settings.height == 'adapt' %}
+              style="padding-bottom: {{ 1 | divided_by: first-image.aspect_ratio | times: 100 }}%;"
+            {% endif %}
+        >
+          {%- capture sizes -%}
+            (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
+            (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
+          {%- endcapture -%}
+          {{
+          first-image
+          | image_url: width: 1500
+          | image_tag: loading: 'lazy', sizes: sizes, widths: '165, 360, 535, 750, 1070, 1500'
+          }}
+        </div>
+        <div class="rte">
+          <p>{{ first-description }}</p>
+        </div>
+      </div>
+    {% endif %}
+
+    {% if second-image %}
+      <div data-order="2"
+          class="image-with-text__media-item image-with-text__media-item--{{ section.settings.desktop_image_width }} grid__item {% if second-modal %}modal-trigger{% endif %}">
+        <div
+            class="image-with-text__media image-with-text__media--{{ section.settings.height }} global-media-settings media"
+            {% if section.settings.height == 'adapt' %}
+              style="padding-bottom: {{ 1 | divided_by: second-image.aspect_ratio | times: 100 }}%;"
+            {% endif %}
+        >
+          {%- capture sizes -%}
+            (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
+            (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
+          {%- endcapture -%}
+          {{
+          second-image
+          | image_url: width: 1500
+          | image_tag: loading: 'lazy', sizes: sizes, widths: '165, 360, 535, 750, 1070, 1500'
+          }}
+        </div>
+        <div class="rte">
+          <p>{{ second-description }}</p>
+        </div>
+      </div>
+    {% endif %}
+
+    {% if third-image %}
+      <div data-order="3"
+          class="image-with-text__media-item image-with-text__media-item--{{ section.settings.desktop_image_width }} grid__item {% if third-modal %}modal-trigger{% endif %}">
+        <div
+            class="image-with-text__media image-with-text__media--{{ section.settings.height }} global-media-settings media"
+            {% if section.settings.height == 'adapt' %}
+              style="padding-bottom: {{ 1 | divided_by: third-image.aspect_ratio | times: 100 }}%;"
+            {% endif %}
+        >
+          {%- capture sizes -%}
+            (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
+            (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
+          {%- endcapture -%}
+          {{
+          third-image
+          | image_url: width: 1500
+          | image_tag: loading: 'lazy', sizes: sizes, widths: '165, 360, 535, 750, 1070, 1500'
+          }}
+        </div>
+        <div class="rte">
+          <p>{{ third-description }}</p>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+
+  <div id="modal"
+       role="dialog"
+       aria-label="{{ 'products.modal.label' | t }}"
+       aria-modal="true"
+       tabindex="-1">
+    <div class="modal-content">
+      <div class="modal-scroll">
+        <span class="close" type="button" aria-label="{{ 'accessibility.close' | t }}">
+          {% render 'icon-close' %}
+         </span>
+        <div class="modal-wrapper">
+          <div class="modal-image image-with-text__media-item image-with-text__media-item--{{ section.settings.desktop_image_width }} grid__item"></div>
+
+          <div class="modal-products"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% schema %}
+{
+  "name": "Look Book",
+  "class": "section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "horizontal_alignment",
+      "label": "Horizontal alignment",
+      "options": [
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "height",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "t:sections.image-with-text.settings.height.options__1.label"
+        },
+        {
+          "value": "small",
+          "label": "t:sections.image-with-text.settings.height.options__2.label"
+        },
+        {
+          "value": "medium",
+          "label": "t:sections.image-with-text.settings.height.options__3.label"
+        },
+        {
+          "value": "large",
+          "label": "t:sections.image-with-text.settings.height.options__4.label"
+        }
+      ],
+      "default": "adapt",
+      "label": "t:sections.image-with-text.settings.height.label"
+    },
+    {
+      "type": "select",
+      "id": "desktop_image_width",
+      "options": [
+        {
+          "value": "small",
+          "label": "t:sections.image-with-text.settings.desktop_image_width.options__1.label"
+        },
+        {
+          "value": "medium",
+          "label": "t:sections.image-with-text.settings.desktop_image_width.options__2.label"
+        },
+        {
+          "value": "large",
+          "label": "t:sections.image-with-text.settings.desktop_image_width.options__3.label"
+        }
+      ],
+      "default": "medium",
+      "label": "t:sections.image-with-text.settings.desktop_image_width.label",
+      "info": "t:sections.image-with-text.settings.desktop_image_width.info"
+    },
+    {
+      "type": "header",
+      "content": "First element"
+    },
+    {
+      "type": "checkbox",
+      "id": "first-modal",
+      "label": "Enable Modal",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "first-image",
+      "label": "Image"
+    },
+    {
+      "type": "richtext",
+      "id": "first-description",
+      "label": "Paragraph"
+    },
+    {
+      "type": "header",
+      "content": "Second element"
+    },
+    {
+      "type": "checkbox",
+      "id": "second-modal",
+      "label": "Enable Modal",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "second-image",
+      "label": "Image"
+    },
+    {
+      "type": "richtext",
+      "id": "second-description",
+      "label": "Paragraph"
+    },
+    {
+      "type": "header",
+      "content": "Third element"
+    },
+    {
+      "type": "checkbox",
+      "id": "third-modal",
+      "label": "Enable Modal",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "third-image",
+      "label": "Image"
+    },
+    {
+      "type": "richtext",
+      "id": "third-description",
+      "label": "Paragraph"
+    }
+  ],
+  "blocks": [
+    {
+      "name":"Product from first Look",
+      "type":"firstProduct",
+      "settings":[
+        {
+          "type":"product",
+          "id":"product",
+          "label":"Product"
+        }
+      ]
+    },
+    {
+      "name":"Product from second Look",
+      "type":"secondProduct",
+      "settings":[
+        {
+          "type":"product",
+          "id":"product",
+          "label":"Product"
+        }
+      ]
+    },
+    {
+      "name":"Product from third Look",
+      "type":"thirdProduct",
+      "settings":[
+        {
+          "type":"product",
+          "id":"product",
+          "label":"Product"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Look Book"
+    }
+  ]
+}
+{% endschema %}

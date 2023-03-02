@@ -28,10 +28,11 @@
     {% endif %}
 
     {% render 'meta-tags' %}
-
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'pubsub.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'custom.js' | asset_url }}" defer="defer"></script>
     {{ content_for_header }}
 
     {%- liquid
@@ -219,6 +220,7 @@
     {% endstyle %}
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
+    {{ 'custom.css' | asset_url | stylesheet_tag }}
 
     {%- unless settings.type_body_font.system? -%}
       <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>

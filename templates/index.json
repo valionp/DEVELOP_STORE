@@ -1,81 +1,204 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "ac9d77a9-a09e-4c7b-8025-aecb863b9600": {
+      "type": "rich-text",
       "blocks": {
-        "heading": {
+        "template--18067652116766__ac9d77a9-a09e-4c7b-8025-aecb863b9600-1677611689289c0db3-0": {
           "type": "heading",
           "settings": {
-            "heading": "Image banner",
-            "heading_size": "h0"
+            "heading": "<p>Pre-Fall 2022<\/p>",
+            "heading_size": "h1"
           }
         },
-        "text": {
+        "template--18067652116766__ac9d77a9-a09e-4c7b-8025-aecb863b9600-1677611689289c0db3-1": {
           "type": "text",
           "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
-            "text_style": "body"
-          }
-        },
-        "button": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify:\/\/collections\/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "text": "<p>Our latest collection is a creative study<br\/>of functional, intuitive and decorative design.<\/p>"
           }
         }
       },
       "block_order": [
-        "heading",
-        "text",
-        "button"
+        "template--18067652116766__ac9d77a9-a09e-4c7b-8025-aecb863b9600-1677611689289c0db3-0",
+        "template--18067652116766__ac9d77a9-a09e-4c7b-8025-aecb863b9600-1677611689289c0db3-1"
       ],
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
         "color_scheme": "background-1",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
+    "77e59d41-3957-46d2-8108-b3fd4da3f1b5": {
+      "type": "lookbook",
+      "blocks": {
+        "34508b57-be0a-407f-9879-7a903dcb134b": {
+          "type": "firstProduct",
+          "settings": {
+            "product": "chain-bracelet"
+          }
+        },
+        "2f14065c-ace2-4ff0-9eb0-59979c4df7da": {
+          "type": "firstProduct",
+          "settings": {
+            "product": "leather-anchor"
+          }
+        },
+        "ea5f5088-7128-4ac3-84e6-6c0a51457ec6": {
+          "type": "secondProduct",
+          "settings": {
+            "product": "bangle-bracelet-with-feathers"
+          }
+        },
+        "04b6793d-48ab-4b1c-b1b6-049fc3bedf77": {
+          "type": "firstProduct",
+          "settings": {
+            "product": "choker-with-bead"
+          }
+        },
+        "ed291df4-90f3-42c9-909d-85dd926deacf": {
+          "type": "thirdProduct",
+          "settings": {
+            "product": "dainty-gold-neclace"
+          }
+        },
+        "3c04a2a9-23ba-47b9-8d54-d5f5c384ee5a": {
+          "type": "secondProduct",
+          "settings": {
+            "product": "example-t-shirt"
+          }
+        }
+      },
+      "block_order": [
+        "34508b57-be0a-407f-9879-7a903dcb134b",
+        "2f14065c-ace2-4ff0-9eb0-59979c4df7da",
+        "ea5f5088-7128-4ac3-84e6-6c0a51457ec6",
+        "04b6793d-48ab-4b1c-b1b6-049fc3bedf77",
+        "ed291df4-90f3-42c9-909d-85dd926deacf",
+        "3c04a2a9-23ba-47b9-8d54-d5f5c384ee5a"
+      ],
       "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
+        "heading": "Look Book",
+        "horizontal_alignment": "center",
+        "height": "medium",
+        "desktop_image_width": "medium",
+        "first-modal": true,
+        "first-image": "shopify:\/\/shop_images\/man.webp",
+        "first-description": "<p>With Nanushka's long-standing interest in juxtaposition, Pre-Fall 2022, entitled Lifted Functionalism, explores the relationship between functionalism and beauty.<\/p>",
+        "second-modal": true,
+        "second-image": "shopify:\/\/shop_images\/girl2.webp",
+        "second-description": "<p>Our latest collection demonstrates an elegant eccentricity – bold patterns inspired by traditional<br\/>nomadic dressing, embroidered buttons, ceramic detailing and artisanal stitching contrast with stark, clean-lined silhouettes that showcase refined modernity.<\/p>",
+        "third-modal": true,
+        "third-image": "shopify:\/\/shop_images\/girl.webp",
+        "third-description": "<p>The essence of Lifted Functionalism is perfectly encapsulated in its stylized summer accessories — artful bags and playful eyewear, distinguished by rich colors and geometric silhouettes. Both chic and practical, Nanushka accessories communicate effortless style.<\/p>"
+      }
+    },
+    "18d87d8a-1d99-4487-bc9b-c8d75de57f6c": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--18067652116766__18d87d8a-1d99-4487-bc9b-c8d75de57f6c-167761456767b77548-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Image with text",
+            "heading_size": "h1"
+          }
+        },
+        "template--18067652116766__18d87d8a-1d99-4487-bc9b-c8d75de57f6c-167761456767b77548-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text_style": "body"
+          }
+        },
+        "template--18067652116766__18d87d8a-1d99-4487-bc9b-c8d75de57f6c-167761456767b77548-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--18067652116766__18d87d8a-1d99-4487-bc9b-c8d75de57f6c-167761456767b77548-0",
+        "template--18067652116766__18d87d8a-1d99-4487-bc9b-c8d75de57f6c-167761456767b77548-1",
+        "template--18067652116766__18d87d8a-1d99-4487-bc9b-c8d75de57f6c-167761456767b77548-2"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/man.webp",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
         "color_scheme": "background-1",
-        "image_ratio": "adapt",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "enable_quick_add": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 28,
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "9fbdbf76-5129-4eaf-9f70-631af8084e12": {
+      "type": "multirow",
+      "blocks": {
+        "template--18067652116766__9fbdbf76-5129-4eaf-9f70-631af8084e12-16776171218c3ccd8e-0": {
+          "type": "row",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/man.webp",
+            "caption": "Caption",
+            "heading": "Row",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        },
+        "template--18067652116766__9fbdbf76-5129-4eaf-9f70-631af8084e12-16776171218c3ccd8e-1": {
+          "type": "row",
+          "settings": {
+            "caption": "Caption",
+            "heading": "Row",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        },
+        "template--18067652116766__9fbdbf76-5129-4eaf-9f70-631af8084e12-16776171218c3ccd8e-2": {
+          "type": "row",
+          "settings": {
+            "caption": "Caption",
+            "heading": "Row",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--18067652116766__9fbdbf76-5129-4eaf-9f70-631af8084e12-16776171218c3ccd8e-0",
+        "template--18067652116766__9fbdbf76-5129-4eaf-9f70-631af8084e12-16776171218c3ccd8e-1",
+        "template--18067652116766__9fbdbf76-5129-4eaf-9f70-631af8084e12-16776171218c3ccd8e-2"
+      ],
+      "settings": {
+        "image_height": "small",
+        "desktop_image_width": "small",
+        "heading_size": "h1",
+        "text_style": "body",
+        "button_style": "secondary",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "image_layout": "alternate-left",
+        "section_color_scheme": "background-1",
+        "row_color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
         "padding_bottom": 36
       }
     }
   },
   "order": [
-    "image_banner",
-    "featured_collection"
+    "ac9d77a9-a09e-4c7b-8025-aecb863b9600",
+    "77e59d41-3957-46d2-8108-b3fd4da3f1b5",
+    "18d87d8a-1d99-4487-bc9b-c8d75de57f6c",
+    "9fbdbf76-5129-4eaf-9f70-631af8084e12"
   ]
 }
